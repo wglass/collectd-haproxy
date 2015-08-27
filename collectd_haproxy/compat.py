@@ -12,7 +12,7 @@ def iteritems(dictionary):
 
 
 def coerce_long(string):
-    if PY3:
-        long = int
+    if not PY3:
+        return long(string)
 
-    return long(string)
+    return int(string)
