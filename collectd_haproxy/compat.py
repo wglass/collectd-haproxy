@@ -13,6 +13,6 @@ def iteritems(dictionary):
 
 def coerce_long(string):
     if not PY3:
-        return long(string)
+        return long(string)  # noqa
 
     return int(string)
