@@ -5,7 +5,7 @@ from .compat import iteritems, coerce_long
 
 class HAProxyPlugin(object):
 
-    name = "collectd_haproxy"
+    name = "haproxy"
 
     def __init__(self, collectd):
         self.collectd = collectd
@@ -26,9 +26,9 @@ class HAProxyPlugin(object):
     def register(cls, collectd):
         instance = cls(collectd)
 
-        collectd.register_config(instance.configure)
-        collectd.register_init(instance.initialize)
-        collectd.register_read(instance.read)
+        collectd.register_config(instance.configure, name=cls.name)
+        collectd.register_init(instance.initialize, name=cls.name)
+        collectd.register_read(instance.read, name=cls.name)
 
     def configure(self, config):
         self.collectd.debug("configuring")
