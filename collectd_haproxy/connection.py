@@ -31,7 +31,7 @@ class HAProxySocket(object):
 
         sock.sendall((command + "\n").encode())
 
-        buff = StringIO.StringIO()
+        buff = StringIO()
 
         while True:
             try:
