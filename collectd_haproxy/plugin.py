@@ -29,7 +29,7 @@ class HAProxyPlugin(object):
         collectd.register_read(instance.read)
 
     def configure(self, config):
-        self.collectd.debug("configuring")
+        self.collectd.info("configuring")
         for node in config.children:
             if node.key == "Socket":
                 self.socket_file_path = node.values[0]
@@ -47,7 +47,7 @@ class HAProxyPlugin(object):
                 self.collectd.warn("Unknown config option: '%s'" % node.key)
 
     def initialize(self):
-        self.collectd.debug("initializing")
+        self.collectd.info("initializing")
         self.metrics = {
             metric_name: self.collectd.Values(
                 plugin="haproxy", type=xref[1], type_instance=xref[0]
@@ -66,17 +66,17 @@ class HAProxyPlugin(object):
             self.collect_stats()
 
     def collect_info(self):
-            self.collectd.debug("reading info")
-            for label, value in self.socket.gen_info():
-                if label not in self.metrics:
-                    continue
+        self.collectd.info("reading info")
+        for label, value in self.socket.gen_info():
+            if label not in self.metrics:
+                continue
 
-                self.metrics[label].dispatch(
-                    plugin_instance="haproxy", values=[value]
-                )
+            self.metrics[label].dispatch(
+                plugin_instance="haproxy", values=[value]
+            )
 
     def collect_stats(self):
-        self.collectd.debug("reading stats")
+        self.collectd.info("reading stats")
 
         stats = self.socket.gen_stats(
             self.include_frontends, self.include_backends, self.include_servers
