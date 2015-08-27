@@ -55,7 +55,7 @@ class HAProxyPlugin(object):
             for metric_name, xref in iteritems(METRIC_XREF)
         }
 
-        self.socket = HAProxySocket(self.socket_file_path)
+        self.socket = HAProxySocket(self.collectd, self.socket_file_path)
 
         self.collectd.info("Using socket path '%s'" % self.socket_file_path)
 
