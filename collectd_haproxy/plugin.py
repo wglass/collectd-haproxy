@@ -5,6 +5,8 @@ from .compat import iteritems, coerce_long
 
 class HAProxyPlugin(object):
 
+    name = "haproxy"
+
     def __init__(self, collectd):
         self.collectd = collectd
 
@@ -50,7 +52,7 @@ class HAProxyPlugin(object):
         self.collectd.debug("initializing")
         self.metrics = {
             metric_name: self.collectd.Values(
-                plugin="haproxy", type=xref[1], type_instance=xref[0]
+                plugin=self.name, type=xref[1], type_instance=xref[0]
             )
             for metric_name, xref in iteritems(METRIC_XREF)
         }
