@@ -5,7 +5,7 @@ from .compat import iteritems, coerce_long
 
 class HAProxyPlugin(object):
 
-    name = "haproxy"
+    name = "collectd_haproxy"
 
     def __init__(self, collectd):
         self.collectd = collectd
@@ -74,7 +74,7 @@ class HAProxyPlugin(object):
                 continue
 
             self.metrics[label].dispatch(
-                plugin_instance="haproxy", values=[value]
+                plugin_instance=self.name, values=[value]
             )
 
     def collect_stats(self):
