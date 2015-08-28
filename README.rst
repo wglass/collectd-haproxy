@@ -17,6 +17,12 @@ HAProxy stats for Collectd
 A plugin for collectd_ to gather metrics for a local HAProxy_ instance, with a
 focus on easy installation and configuration.
 
+.. image:: http://collectd-haproxy.readthedocs.org/en/latest/_images/graphs.png
+   :alt: Graphs made with HAProxy stats
+   :align: center
+
+(graphs made with Grafana_)
+
 
 Installation
 ------------
@@ -75,6 +81,7 @@ LICENSE_ file for more details.
 
 .. _collectd: https://collectd.org
 .. _HAProxy: http://www.haproxy.org
+.. _Grafana: http://grafana.org
 .. _PyPI: http://pypi.python.org/pypi/collectd-haproxy
 .. _here: https://cbonte.github.io/haproxy-dconv/configuration-1.5.html#9.2
 .. _supervisord: http://supervisord.org
