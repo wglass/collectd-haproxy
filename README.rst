@@ -9,6 +9,10 @@ HAProxy stats for Collectd
    https://codeclimate.com/github/wglass/collectd-haproxy/badges/gpa.svg
    :alt: Code Climate
    :target: https://codeclimate.com/github/wglass/collectd-haproxy
+.. image::
+   https://readthedocs.org/projects/collectd-haproxy/badge/?version=latest
+   :target: https://readthedocs.org/projects/collectd-haproxy/?badge=latest
+   :alt: Documentation Status
 
 A plugin for collectd_ to gather metrics for a local HAProxy_ instance, with a
 focus on easy installation and configuration.
