@@ -1,8 +1,6 @@
-version_info = (0, 9, 0)
+version_info = (1, 0, 0)
 
 __version__ = ".".join(map(str, version_info))
-
-import logging
 
 try:
     import collectd
@@ -15,5 +13,3 @@ from .plugin import HAProxyPlugin
 
 if collectd_present:
     HAProxyPlugin.register(collectd)
-else:
-    logging.warn("No collectd module present.")
