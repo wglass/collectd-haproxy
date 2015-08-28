@@ -10,7 +10,7 @@ focus on easy installation and configuration.
 Installation
 ------------
 
-Installation is a simple `pip` command::
+The project is on PyPI_ so installation is a simple `pip` command::
 
     pip install collectd-haproxy
 
@@ -74,6 +74,7 @@ LICENSE_ file for more details.
 
 .. _collectd: https://collectd.org
 .. _HAProxy: http://www.haproxy.org
+.. _PyPI: http://pypi.python.org/pypi/collectd-haproxy
 .. _here: https://cbonte.github.io/haproxy-dconv/configuration-1.5.html#9.2
 .. _supervisord: http://supervisord.org
 .. _GitHub: https://github.com/wglass/collectd-haproxy
