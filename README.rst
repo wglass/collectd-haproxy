@@ -21,16 +21,6 @@ Installation is a simple `pip` command::
 
     pip install collectd-haproxy
 
-
-To install manually, first download the current tarball at :current_tarball:`z` then:
-
-.. parsed-literal::
-
-   tar -zxvf collectd-haproxy-|version|.tar.gz
-   cd collectd-haproxy-|version|
-   python setup.py install
-
-
 .. note::
 
    If collectd is running with a virtualenv activated (under an isolated
