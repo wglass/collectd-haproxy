@@ -52,7 +52,7 @@ located::
         </Module>
     </Plugin>
 
-For details on all of the options available, `read the docs`!
+For details on all of the options available, `read the docs`_!
 
 
 Development
