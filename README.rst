@@ -1,7 +1,10 @@
-.. title:: HAProxy Stats for Collectd
-
 HAProxy stats for Collectd
 ==========================
+
+.. image::
+    https://travis-ci.org/wglass/collectd-haproxy.svg?branch=master
+    :alt: Build Status
+    :target: https://travis-ci.org/wglass/collectd-haproxy
 
 A plugin for collectd_ to gather metrics for a local HAProxy_ instance, with a
 focus on easy installation and configuration.
