@@ -16,5 +16,4 @@ Topic :: System :: Monitoring
 Topic :: System :: Networking
 Topic :: System :: Networking :: Monitoring
 Topic :: System :: Systems Administration
-Topic :: System :: System Shells
 Topic :: Utilities
