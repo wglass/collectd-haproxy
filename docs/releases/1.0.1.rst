@@ -1,0 +1,4 @@
+1.0.1
+~~~~~
+
+* Some small updates to the documentation.
