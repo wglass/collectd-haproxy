@@ -83,6 +83,11 @@ class HAProxyPlugin(object):
             else:
                 self.collectd.warn("Unknown config option: '%s'" % node.key)
 
+        if not self.socket_file_path:
+            self.collectd.error("No HAProxy socket path configured!")
+            self.collectd.unregister_init(self.initialize)
+            self.collectd.unregister_read(self.read)
+
     def initialize(self):
         """
         The 'initialize' collectd callback for the plugin.
