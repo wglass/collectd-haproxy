@@ -88,4 +88,8 @@ METRIC_XREF = {
     "req_tot": ("request_count", "counter"),
     "cli_abrt": ("client_abort_count", "counter"),
     "srv_abrt": ("server_abort_count", "counter"),
+    "qtime": ("avg_queue_time", "gauge"),
+    "ctime": ("avg_connect_time", "gauge"),
+    "rtime": ("avg_response_time", "gauge"),
+    "ttime": ("avg_total_session_time", "gauge"),
 }
