@@ -2,6 +2,14 @@ HAProxy stats for Collectd
 ==========================
 
 .. image::
+    https://img.shields.io/pypi/v/collectd-haproxy.svg
+    :target: PyPI_
+    :alt: Python Package Version
+.. image::
+    https://readthedocs.org/projects/collectd-haproxy/badge/?version=latest
+    :target: https://readthedocs.org/projects/collectd-haproxy/?badge=latest
+    :alt: Documentation Status
+.. image::
     https://travis-ci.org/wglass/collectd-haproxy.svg?branch=master
     :alt: Build Status
     :target: https://travis-ci.org/wglass/collectd-haproxy
@@ -9,10 +17,6 @@ HAProxy stats for Collectd
     https://codeclimate.com/github/wglass/collectd-haproxy/badges/gpa.svg
     :alt: Code Climate
     :target: https://codeclimate.com/github/wglass/collectd-haproxy
-.. image::
-    https://readthedocs.org/projects/collectd-haproxy/badge/?version=latest
-    :target: https://readthedocs.org/projects/collectd-haproxy/?badge=latest
-    :alt: Documentation Status
 
 A plugin for collectd_ to gather metrics for a local HAProxy_ instance, with a
 focus on easy installation and configuration.
