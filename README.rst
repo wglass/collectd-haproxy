@@ -77,7 +77,7 @@ on GitHub.
 
 License
 ~~~~~~~
-\(c\) 2015 William Glass
+\(c\) 2015-2016 William Glass
 
 collectd-haproxy is licensed under the terms of the MIT license.  See the
 LICENSE_ file for more details.

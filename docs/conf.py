@@ -45,7 +45,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 project = u'collectd-haproxy'
-copyright = u'2015, William Glass'
+copyright = u'2015-2016, William Glass'
 author = u'William Glass'
 
 version = release = collectd_haproxy.__version__
