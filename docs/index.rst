@@ -6,7 +6,7 @@ HAProxy stats for Collectd
 A plugin for collectd_ to gather metrics for a local HAProxy_ instance, with a
 focus on easy installation and configuration.
 
-.. image:: /_static/graphs.png
+.. image:: /static/graphs.png
    :alt: Graphs made with HAProxy stats
    :align: center
 
