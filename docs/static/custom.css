@@ -1,0 +1,16 @@
+/* foo bar! */
+.navbar-default {
+    background-color: #545f66;
+}
+.navbar-default .navbar-brand {
+    color: #ffffff;
+}
+.navbar-default .navbar-nav>li>a {
+    color: #ffffff;
+}
+.alert-info {
+    background-color: #b6dcfe;
+}
+.alert {
+    color: #6b6b6b;
+}
