@@ -14,3 +14,6 @@
 .alert {
     color: #6b6b6b;
 }
+.alert a:not(.close) {
+    color: #545f66;
+}
