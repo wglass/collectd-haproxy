@@ -35,8 +35,10 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.extlinks',
 ]
+html_static_path = ['static']
 if not on_rtd:
     extensions.append("sphinxcontrib.spelling")
+    html_static_path = []
 
 templates_path = ['templates']
 
