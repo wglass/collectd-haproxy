@@ -35,10 +35,8 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.extlinks',
 ]
-html_static_path = []
 if not on_rtd:
     extensions.append("sphinxcontrib.spelling")
-    html_static_path = ['static']
 
 templates_path = ['templates']
 
@@ -87,7 +85,9 @@ todo_include_todos = False
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+html_static_path = []
+if not on_rtd:
+    html_static_path = ['_static']
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
