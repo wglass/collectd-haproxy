@@ -18,6 +18,7 @@ import os
 sys.path.insert(0, os.path.abspath('..'))
 
 import collectd_haproxy
+import sphinx_bootstrap_theme
 
 on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 
@@ -35,9 +36,6 @@ extensions = [
     'sphinx.ext.extlinks',
 ]
 if not on_rtd:
-    import sphinx_rtd_theme
-    html_theme = 'sphinx_rtd_theme'
-    html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
     extensions.append("sphinxcontrib.spelling")
 
 templates_path = ['templates']
@@ -91,24 +89,26 @@ html_static_path = ['static']
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-#html_theme = "alabaster"
+html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
+html_theme = 'bootstrap'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
 html_theme_options = {
-    # "description": "HAProxy stats for collectd.",
-    # "github_user": "wglass",
-    # "github_repo": "collectd-haproxy",
-    # "github_banner": True,
-    # "github_button": False,
-    # "link": "#3782be",
-    # "link_hover": "#3782be",
-    # "note_bg": "#cfe7f8",
-    # "pre_bg": "#eef7ff",
-    # # "gray_1": "#fff",
-    # "gray_2": "#fff",
-    # "gray_3": "#fff",
+    "navbar_links": [
+        ("Overview", "index"),
+        ("Configuration", "configuration"),
+        ("Source Docs", "source_docs"),
+        ("Release Notes", "releases"),
+    ],
+    "navbar_class": "navbar",
+    "bootswatch_theme": "paper",
+    "navbar_sidebarrel": False,
+    "navbar_pagenav": True,
+    "bootstrap_version": "3",
+    "source_link_position": None,
+    "globaltoc_includehidden": False,
 }
 
 # The name for this set of Sphinx documents.  If None, it defaults to
@@ -137,11 +137,11 @@ html_theme_options = {
 #html_use_smartypants = True
 
 # Custom sidebar templates, maps document names to template names.
-html_sidebars = {
-    '**': [
-        'about.html', 'navigation.html', 'searchbox.html', 'donate.html',
-    ]
-}
+# html_sidebars = {
+#     '**': [
+#         'about.html', 'navigation.html', 'searchbox.html', 'donate.html',
+#     ]
+# }
 
 
 extlinks = {
