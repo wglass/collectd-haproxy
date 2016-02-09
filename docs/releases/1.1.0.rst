@@ -1,0 +1,12 @@
+1.1.0
+~~~~~
+
+* Added some missing timing metrics, namely qtime, ctime, rtime and ttime.
+
+* Switched to a new documentation theme.
+
+* Added a badge for the pypi version to the README file, links to the pypi page.
+
+* Fixed a style failure with an import not at the top of a file.
+
+* Added a coverage report step to the Travis CI tests.
