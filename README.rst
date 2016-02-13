@@ -7,7 +7,7 @@ HAProxy stats for Collectd
     :alt: Python Package Version
 .. image::
     https://readthedocs.org/projects/collectd-haproxy/badge/?version=latest
-    :target: https://readthedocs.org/projects/collectd-haproxy/?badge=latest
+    :target: https://collectd-haproxy.readthedocs.org/en/latest
     :alt: Documentation Status
 .. image::
     https://travis-ci.org/wglass/collectd-haproxy.svg?branch=master
