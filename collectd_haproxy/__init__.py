@@ -1,7 +1,8 @@
 try:
     import collectd
+    collectd.register_config
     collectd_present = True
-except ImportError:
+except (ImportError, AttributeError):
     collectd_present = False
 
 from .plugin import HAProxyPlugin
