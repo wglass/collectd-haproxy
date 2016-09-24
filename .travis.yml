@@ -4,8 +4,8 @@ envs:
   - TOXENV=py27
   - TOXENV=py35
 before_install:
-  - pip install codecov
+  - pip install codeclimate-test-reporter
 install: pip install tox
 script: tox
 after_success:
-  - codecov
+  - codeclimate-test-reporter
