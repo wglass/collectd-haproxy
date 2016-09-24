@@ -1,6 +1,6 @@
 import os
 
-import flake8.main
+from flake8.api import legacy as flake8
 
 from collectd_haproxy import compat
 
@@ -37,14 +37,18 @@ def create_style_assert(path, python_files):
 
 
 def assert_conforms_to_style(python_files):
-    checker = flake8.main.get_style_guide(
-        paths=python_files, max_complexity=MAX_COMPLEXITY
-    )
+    checker = flake8.get_style_guide(max_complexity=MAX_COMPLEXITY)
+
     checker.options.jobs = 1
     checker.options.verbose = True
-    result = checker.check_files()
+    report = checker.check_files(python_files)
 
-    assert not result.messages, "\n".join([
-        "%s: %s" % (code, message)
-        for code, message in compat.iteritems(result.messages)
+    warnings = report.get_statistics("W")
+    errors = report.get_statistics("E")
+
+    assert not (warnings or errors), "\n" + "\n".join([
+        "Warnings:",
+        "\n".join(warnings),
+        "Errors:",
+        "\n".join(errors),
     ])

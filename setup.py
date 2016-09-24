@@ -21,9 +21,9 @@ setup(
     include_package_data=True,
     install_requires=[],
     tests_require=[
-        "nose",
+        "pytest",
+        "pytest-cov",
         "mock",
-        "coverage",
-        "flake8",
+        "flake8>=3.0.0",
     ],
 )
