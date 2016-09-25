@@ -12,6 +12,9 @@ engines:
       threshold: "C"
   fixme:
     enabled: true
+ratings:
+  paths:
+    - "collectd_haproxy"
 exclude_paths:
-- "tests/*"
-- "docs/*"
+  - "tests/*"
+  - "docs/*"
