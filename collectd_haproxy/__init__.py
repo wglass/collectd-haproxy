@@ -7,7 +7,7 @@ except (ImportError, AttributeError):
 
 from .plugin import HAProxyPlugin
 
-version_info = (1, 1, 1)
+version_info = (1, 2, 0)
 
 __version__ = ".".join(map(str, version_info))
 

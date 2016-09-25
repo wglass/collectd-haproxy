@@ -1,0 +1,5 @@
+1.2.0
+~~~~~
+
+* Fixed up python 3.5 support (hopefully)
+* Test coverage now at 100%
