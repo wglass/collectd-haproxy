@@ -1,7 +1,7 @@
 try:
     from cStringIO import StringIO
-except ImportError:
-    from io import StringIO
+except ImportError:  # pragma: no cover
+    from io import StringIO  # pragma: no cover
 import errno
 import socket
 
@@ -65,7 +65,7 @@ class HAProxySocket(object):
             try:
                 chunk = sock.recv(SOCKET_BUFFER_SIZE)
                 if chunk:
-                    buff.write(chunk)
+                    buff.write(chunk.decode("ascii"))
                 else:
                     break
             except IOError as e:
@@ -89,17 +89,16 @@ class HAProxySocket(object):
         :param response: The full response string from running the command.
         :type response: str
         """
-        if response.startswith(b"Unknown command."):
+        if response.startswith("Unknown command."):
             self.collectd.error("Unknown HAProxy command: %s" % command)
             return ""
-        if response == b"Permission denied.\n":
+        if response == "Permission denied.\n":
             self.collectd.error("Permission denied for command: %s" % command)
             return ""
-        if response == b"No such backend.\n":
+        if response == "No such backend.\n":
             self.collectd.error("No such server: '%s'" % command)
             return ""
 
-        response = response.decode()
         return response.rstrip("\n")
 
     def gen_info(self):
