@@ -1,7 +1,7 @@
 try:
     from cStringIO import StringIO
-except ImportError:
-    from io import StringIO
+except ImportError:  # pragma: no cover
+    from io import StringIO  # pragma: no cover
 import errno
 import socket
 
