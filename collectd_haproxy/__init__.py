@@ -1,7 +1,7 @@
 try:
     import collectd
-    collectd.register_config
-    collectd_present = True
+    collectd.register_config  # pragma: no cover
+    collectd_present = True  # pragma: no cover
 except (ImportError, AttributeError):
     collectd_present = False
 
@@ -13,4 +13,4 @@ __version__ = ".".join(map(str, version_info))
 
 
 if collectd_present:
-    HAProxyPlugin.register(collectd)
+    HAProxyPlugin.register(collectd)  # pragma: no cover
