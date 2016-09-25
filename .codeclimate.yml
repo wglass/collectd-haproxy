@@ -1,10 +1,19 @@
 languages:
   Python: true
 engines:
+  pep8:
+    enabled: true
+  duplication:
+    enabled: true
+    config:
+      languages:
+        - python
   radon:
     enabled: true
     config:
       threshold: "C"
+  fixme:
+    enabled: true
 exclude_paths:
 - "tests/*"
 - "docs/*"
