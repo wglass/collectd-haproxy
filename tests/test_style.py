@@ -1,4 +1,5 @@
 import os
+import sys
 
 from flake8.api import legacy as flake8
 
@@ -7,6 +8,10 @@ from collectd_haproxy import compat
 
 DIRS_TO_TEST = ("collectd_haproxy", "tests")
 MAX_COMPLEXITY = 11
+
+
+# flake8 does not work on python 2.6 or lower
+__test__ = sys.version_info >= (2, 7)
 
 
 def test_style():
