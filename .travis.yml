@@ -9,3 +9,10 @@ install: pip install tox
 script: tox
 after_success:
   - codeclimate-test-reporter
+deploy:
+  - provider: pypi
+    user: wglass
+    password:
+      secure: xCWMjudi0Gu4ROcWnX3UCXTDz4ESSEEUonbX60DH/iqQuHK0k7LVBaSPLKhd0LMGQeD+V18vRDAB/O2vj0k+PW/I7fCHLsGiTSWbp1aAn4JJ/qv1KVPrXUCnivFWCv6oXNT5f8mqy88c25PJRBebxkYq+p9OT9wzpANZHMIs8+5a6BNW/WC/WcRuuvk3S6gSB5+36CgQ4jMjPh7qVuIT0SbSDRxAMTAr7jov5gBHcv2PsBItvMNDuCmde1o2ydI0vfHDlow9RdWz16T27AfNFH02QtA/lbFQ17kwEsB3gWR7aZk7BKfIoOllcRJU341VlZPyPSORxMqJ80uH74JncfqcQmnUfAu+oflmewBldDAAMIvQRL+6kPQjcWbgAoiHC4wzwI/Bc0U5SeqUkZyzefM4gbixc64mPajN8OUhslGF/BnKaMo+8FxIFVl+sAMobXXACUiNvypkzMt+A6wz5w41fge3gfwXFRBIH8iBN+EJjkIxQI3p1Jggvjoww+BLivAMSDgji19v0Bm91aoTV+JUMkA5irxSszNaCKxORD4gmuodONuHUJinNFLXImZS0bFdcB00aImgnm2NkRJFkdmVubS1YpU848M5tJu/c/OOu7BcbD5XjblpZiEWXJ0bX+c43oYVPM2J1HPwL5rynP48B2oN14AfhwyBRo5QK4g=
+    on:
+      tags: true
