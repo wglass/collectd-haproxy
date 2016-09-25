@@ -31,6 +31,6 @@ def coerce_long(string):
     :type string: str
     """
     if not PY3:
-        return long(string)  # noqa
+        return long(string)  # pragma: no cover
 
     return int(string)
