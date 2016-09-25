@@ -10,9 +10,11 @@ script: tox
 after_success:
   - codeclimate-test-reporter
 deploy:
-  - provider: pypi
-    user: wglass
-    password:
-      secure: xCWMjudi0Gu4ROcWnX3UCXTDz4ESSEEUonbX60DH/iqQuHK0k7LVBaSPLKhd0LMGQeD+V18vRDAB/O2vj0k+PW/I7fCHLsGiTSWbp1aAn4JJ/qv1KVPrXUCnivFWCv6oXNT5f8mqy88c25PJRBebxkYq+p9OT9wzpANZHMIs8+5a6BNW/WC/WcRuuvk3S6gSB5+36CgQ4jMjPh7qVuIT0SbSDRxAMTAr7jov5gBHcv2PsBItvMNDuCmde1o2ydI0vfHDlow9RdWz16T27AfNFH02QtA/lbFQ17kwEsB3gWR7aZk7BKfIoOllcRJU341VlZPyPSORxMqJ80uH74JncfqcQmnUfAu+oflmewBldDAAMIvQRL+6kPQjcWbgAoiHC4wzwI/Bc0U5SeqUkZyzefM4gbixc64mPajN8OUhslGF/BnKaMo+8FxIFVl+sAMobXXACUiNvypkzMt+A6wz5w41fge3gfwXFRBIH8iBN+EJjkIxQI3p1Jggvjoww+BLivAMSDgji19v0Bm91aoTV+JUMkA5irxSszNaCKxORD4gmuodONuHUJinNFLXImZS0bFdcB00aImgnm2NkRJFkdmVubS1YpU848M5tJu/c/OOu7BcbD5XjblpZiEWXJ0bX+c43oYVPM2J1HPwL5rynP48B2oN14AfhwyBRo5QK4g=
-    on:
-      tags: true
+  provider: pypi
+  user: wglass
+  password:
+    secure: T+uvYexB/1O/1fEVakHIIUwu/2E1KbvYjTH6ZWPAnPHxH7u+v2xiWkOoHWwhvb+gfT/vU3PDdPVERerKpXxJr+CVkwcHA5+NEZuK7M0srPRGjTS/9YB1gnO+SBmAw7hL0IUYLDBIcCX/0sxfI1ICANSsIeh3GajL5+CCoW6yOR167VgElCt9gf5JP0EcsGcMsXbTgQGP3ePwlHaI8VuRiC6vpWUL8A6HfwbOHAPA7yGsw6gPlG7//n7bfKM0xBGZOqcEsQVyNgCHAG0y8fwxV9fh9iNcj6XnLs7qg+UwB4cj9WIRSyAd/ikniiwoNFzJ6iLeTKhrcs21KaCX2jLfYxWRqDMlayLnJ1Jlv+wNBmFjm/03jLW9pd9pXVyf5UL2iVIDGXGPfjnGcNX76bcMkBqjbZq9fPhinw07wzuXwsEPKbA+6nn1/X9Z5Zk102T3pQbBenKsEZE7F8zYNar5jQVZ3tCjTg6gLjKFYqNOQp+yWbz0YoAgsdwlrl2RGLF78arAI1eI+jABs0xlueN5DnItVl9+lvk6w4r38N4p1iaOCmG/RouPbPxZIx8IPuLHFug2RtGzscJXjXVBGdWzsxaLpw5+pVAT3sVltd/ENp2rOFEJGiVWN18NSfYebS+wkdTp/xh3VjnnJV187XegXWSyNBrsiYTxbkcmwSq76dk=
+  on:
+    tags: true
+    distributions: sdist bdist_wheel
+    repo: wglass/collectd-haproxy
