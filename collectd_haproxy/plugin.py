@@ -1,6 +1,11 @@
-from .metrics import METRIC_XREF
+import logging
+
+from .metrics import METRIC_XREF, TEXT_METRICS
 from .connection import HAProxySocket
 from .compat import iteritems, coerce_long
+
+
+log = logging.getLogger(__name__)
 
 
 class HAProxyPlugin(object):
@@ -159,6 +164,12 @@ class HAProxyPlugin(object):
                 if not value:
                     value = 0
 
+                if label in TEXT_METRICS:
+                    value = self.translate_text(TEXT_METRICS[label], value)
+                    if value is False:
+                        log.warn("Unmatched %s text value: %s", label, value)
+                        continue
+
                 try:
                     value = coerce_long(value)
                 except (TypeError, ValueError):
@@ -167,3 +178,25 @@ class HAProxyPlugin(object):
                 self.metrics[label].dispatch(
                     plugin_instance=plugin_instance, values=[value]
                 )
+
+    def translate_text(self, value_xref, value):
+        """
+        Helper method for converting textual values to numeric equivalents.
+
+        Uses the nested-dictionary cross-reference `TEXT_METRICS` from the
+        `collectd_haproxy.metrics` module.
+
+        If no translation can be made, returns `False`.
+
+        :param value_xref: crossreference of textual value *prefix* to the
+            numeric equivalent.
+        :type value_xref: dict
+        :param value: The raw textual value.
+        :type value: str
+        """
+        result_value = None
+        for text, numeric_value in iteritems(value_xref):
+            if value.startswith(text):
+                result_value = numeric_value
+
+        return result_value
